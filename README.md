@@ -63,7 +63,7 @@ jobs:
         with:
           components: clippy
           override: true
-      - uses: actions-rs/clippy-check@v1
+      - uses: gbhand/clippy-check@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           args-file: "./clippy_args.txt"
