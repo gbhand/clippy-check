@@ -1,6 +1,5 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: Build
-# dummy commit
 
 on:
   push:
@@ -156,12 +155,14 @@ jobs:
           files: reports/unit-tests-report.xml
 
       - name: Setup Code Climate test-reporter
+        if: false
         shell: bash
         run: |
           # download test reporter as a static binary
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           chmod +x ./cc-test-reporter
       - name: Run code-climate-test-reporter
+        if: false
         shell: bash
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
